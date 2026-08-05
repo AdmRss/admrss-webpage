@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" theme="dark">  
+<html lang="en" theme="light">  
     <head>
         <meta charSet="UTF-8">
+        <link href="./src/input.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>AdmRss Page</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +40,7 @@
                 height: 230px;
                 width: 100%;
                 margin: 0 auto;
-                padding: 1.5rem 30px 20px;
+                padding: 2.5rem 30px 20px;
             }
 
             .wrapper-foto {
@@ -72,7 +73,7 @@
                 max-width: 770px;
                 width: 100%;
                 margin: 0 auto;
-                padding: 0rem 30px 48px;
+                padding: 0rem 30px 45px;
                 justify-content: center;
             }
 
@@ -81,7 +82,7 @@
             }
 
             h1 {
-                font-size: 3rem;
+                font-size: 2.75rem;
                 color: #111111;
                 letter-spacing: -0.08rem;
                 font-weight: 400;
@@ -97,7 +98,7 @@
 
             p {
                 margin: 0rem 0 1rem 0;
-                font-size: 1.25rem;
+                font-size: 1.1rem;
                 letter-spacing: 0.02rem;
                 font-weight: 350;
                 line-height: 1.4;
@@ -116,7 +117,41 @@
                 background-color: #f5f5f5;
                 height: 100%;
                 width: 100%;
-                display: block;
+                padding: 2rem;
+            }
+
+            .header-project {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.5rem 0rem;
+            }
+
+            .bagian-kiri {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                padding-left: 1rem;
+            }
+
+            .bagian-kiri .judul-kiri {
+                background-color: black;
+                color: white;
+                padding: 0.1rem 0.3rem;
+                border-radius: 0.3rem;
+
+            }
+
+            .bagian-kanan {
+                align-items: flex-end;
+                padding: 1rem 0 0 0;
+            }
+
+            .bagian-kanan a {
+                text-decoration: none;
+                color: #111111;
+                font-size: 1.15rem;
             }
 
             .container-experience {
@@ -146,10 +181,23 @@
                 letter-spacing: -0.025rem;
             }
         </style>
+
+        <script>
+            
+        </script>
     </head>
     <!-- <div align='center'> <img src="images/Capture.JPG" alt="logo header"><br/>
    </div> --> 
     <body>
+
+        <div class="nav">
+            <div class="nav-wrapper">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
         <div class="container-foto">
             <div class="wrapper-foto">
                 <div class="fotonya">
@@ -172,10 +220,44 @@
                 </p>
             </div>
         </section>
+
+
+<!--                             
+        <div class="project-lengkap">
+            other projects<svg xmlns="http://www.w3.org/2000/svg" 
+            width="15" height="15" viewBox="0 0 24 24" 
+            fill="none" stroke="currentColor" stroke-width="2" 
+            stroke-linecap="round" stroke-linejoin="round" 
+            class="lucide lucide-arrow-right size-4 group-hover:translate-x-1 transition-all">
+            <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </div>
+-->
+        
         <section class="projects">
-            <div class="container-project"></div>
-                <div></div>
+            <div class="container-project">
+                
+                <div class="header-project">
+                    <div class="bagian-kiri">
+                        <div class="judul-kiri">
+                            Projects
+                        </div>
+                        <div class="highlight-kiri">
+                            <h1>Highlighted ⁕</h1>
+                        </div>
+                    </div>
+                    <div class="bagian-kanan">
+                        <a href="project_lengkap.html" target="_self" rel="noopener norefferer">other projects <span style="font-size: 0.9rem;"><b>-></b></span></a>
+                    </div>
+                </div>
+
+                <div class="main-project"></div>
+
+            </div>
         </section>
+
+
+
+
         <main class="container-experience">
             <div class="list-experience">
                 <div class="judul-experience">
