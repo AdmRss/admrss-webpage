@@ -120,38 +120,34 @@
                 padding: 2rem;
             }
 
-            .header-project {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 0.5rem 0rem;
+            @media (max-width: 768px) {
+                .container-project {
+                    padding: 1rem;
+                }
             }
 
-            .bagian-kiri {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: flex-start;
-                padding-left: 1rem;
+            .header-title {
+                display: flexbox;
             }
 
-            .bagian-kiri .judul-kiri {
-                background-color: black;
+            .header-title p {
+                display: inline-block;
                 color: white;
                 padding: 0.1rem 0.3rem;
+                background-color: #000;
                 border-radius: 0.3rem;
-
             }
 
-            .bagian-kanan {
-                align-items: flex-end;
-                padding: 1rem 0 0 0;
-            }
-
-            .bagian-kanan a {
+            .other-link {
+                display: inline-block;
+                margin-left: auto;
+                color: #000;
                 text-decoration: none;
-                color: #111111;
-                font-size: 1.15rem;
+            }
+
+            .main-project {
+                display: flexbox;
+                height: 60%;
             }
 
             .container-experience {
@@ -221,37 +217,21 @@
             </div>
         </section>
 
-
-<!--                             
-        <div class="project-lengkap">
-            other projects<svg xmlns="http://www.w3.org/2000/svg" 
-            width="15" height="15" viewBox="0 0 24 24" 
-            fill="none" stroke="currentColor" stroke-width="2" 
-            stroke-linecap="round" stroke-linejoin="round" 
-            class="lucide lucide-arrow-right size-4 group-hover:translate-x-1 transition-all">
-            <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-        </div>
--->
-        
         <section class="projects">
             <div class="container-project">
                 
-                <div class="header-project">
-                    <div class="bagian-kiri">
-                        <div class="judul-kiri">
-                            Projects
-                        </div>
-                        <div class="highlight-kiri">
-                            <h1>Highlighted ⁕</h1>
-                        </div>
-                    </div>
-                    <div class="bagian-kanan">
-                        <a href="project_lengkap.html" target="_self" rel="noopener norefferer">other projects <span style="font-size: 0.9rem;"><b>-></b></span></a>
-                    </div>
+                <div class="header-title">
+                    <p>Projects</p>
+                    <h1>Highlighted ⁕</h1>
                 </div>
+                <a href="project_lengkap.html" class="other-link">
+                        other projects &rarr;
+                </a>
 
-                <div class="main-project"></div>
-
+                <div class="main-project">
+                    <div class="card">  </div>
+                    <div class="card">   </div>
+                </div>
             </div>
         </section>
 
