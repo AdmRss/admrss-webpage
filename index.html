@@ -123,30 +123,33 @@
                 padding: 2rem;
             }
 
-            @media (max-width: 768px) {
+            @media (max-width: 640px) {
                 .container-project {
-                    grid-template-columns: 1fr auto;
+                    grid-template-columns: 1fr;
                     grid-template-areas: 
-                        "area-header area-link"
-                        "area-card area-card";
+                        "area-header"
+                        "area-card area-card"
+                        "area-link";
+                    gap: 1rem;
                     padding: 1rem;
                 }
+
+                .header-title {
+                    display: inline-block;
+                    grid-area: area-header;
+                    align-items: center;
+                    text-align: center;
+                }
                 .other-link {
-                    align-self: center;
-                    justify-self: end;
+                    grid-area: area-link;
                 }
             }
-
-            .header-title {
-                display: flexbox;
-            }
-
-            .header-title p {
+            .header-title .judul-header {
                 display: inline-block;
                 color: white;
-                padding: 0.1rem 0.3rem;
+                padding: 0.2rem 0.6rem;
                 background-color: #000;
-                border-radius: 0.3rem;
+                border-radius: 0.5rem;
             }
 
             .other-link {
@@ -235,12 +238,19 @@
             <div class="container-project">
                 
                 <div class="header-title">
-                    <p>Projects</p>
-                    <h1>Highlighted ⁕</h1>
+                    <div class="judul-header">
+                        projects
+                    </div>
+                    <div class="highlight-header">
+                        <h1>Highlighted ⁕</h1>
+                    </div>
+                </div>
+
+                <div class="other-link">
                     <a href="project_lengkap.html" class="other-link">
                             other projects &rarr;
-                    </a>
-                </div>
+                       </a>
+                </div>                
 
                 <div class="main-project">
                     <div class="card"> Halo </div>
