@@ -82,9 +82,9 @@
             }
 
             h1 {
-                font-size: 2.75rem;
+                font-size: 2rem;
                 color: #111111;
-                letter-spacing: -0.08rem;
+                letter-spacing: -0.1rem;
                 font-weight: 400;
                 margin: 0 0 0.5rem 0;
                 line-height: 1;
@@ -98,7 +98,7 @@
 
             p {
                 margin: 0rem 0 1rem 0;
-                font-size: 1.1rem;
+                font-size: 0.9rem;
                 letter-spacing: 0.02rem;
                 font-weight: 350;
                 line-height: 1.4;
@@ -106,65 +106,76 @@
             }
 
             .projects {
-                height: 34.5rem;
+                height: 35.5rem;
                 width: 100%;
-                padding: 0 1rem 0;
-            }
-
-            .container-project {
-                display: grid;
-                gap: 20px;
-                grid-template-areas: "area-header" "area-card" "area-link";
                 border-radius: 1.5rem;
                 box-shadow: 0 4px 10px rgba(17, 17, 17, 0.15);
                 background-color: #f5f5f5;
+            }
+
+            .container-project {
+                justify-self: center;
+                display: grid;
+                margin: 0rem auto;
+                gap: 20px;
+                grid-template-areas: "area-header" "area-card";
+                grid-template-rows: 1fr 4fr;
+                padding: 1.5rem;
                 height: 100%;
                 width: 100%;
-                padding: 2rem;
+                max-width: 770px;
             }
 
-            @media (max-width: 640px) {
-                .container-project {
-                    grid-template-columns: 1fr;
-                    grid-template-areas: 
-                        "area-header"
-                        "area-card area-card"
-                        "area-link";
-                    gap: 1rem;
-                    padding: 1rem;
-                }
-
-                .header-title {
-                    display: inline-block;
-                    grid-area: area-header;
-                    align-items: center;
-                    text-align: center;
-                }
-                .other-link {
-                    grid-area: area-link;
-                }
+            .header-title {
+                grid-area: area-header;
             }
+
             .header-title .judul-header {
                 display: inline-block;
                 color: white;
                 padding: 0.2rem 0.6rem;
                 background-color: #000;
                 border-radius: 0.5rem;
+                margin-bottom: 0.5rem;
+                margin-top: 1rem;
+            }
+
+            .highlight-header {
+                font-size: 3rem;
+                color: #111111;
+                letter-spacing: -0.12rem;
+                font-weight: 600;
+                margin: 0 0 0.5rem 0;
+                line-height: 1;
             }
 
             .other-link {
-                justify-self: center;
-                margin-left: auto;
+                grid-area: area-header;
                 color: #000;
+                justify-self: flex-end;
+                margin-top: 5rem;
+                margin-right: 0.25rem;
                 text-decoration: none;
             }
 
-            .main-project {
-                display: block;
-                height: 60%;
+            .card-wrapper {
+                grid-area: area-card;
+                display: grid;
+                grid-template-columns:1fr 1fr ;
+                gap: 1rem;
+                column-gap: 1rem;
             }
-            .main-project .card {
+            .card-wrapper .card1 {
+                padding: 1rem;
                 background-color: #dcece9;
+                border-radius: 1rem;
+            }
+
+            .card-wrapper .card2 {
+                background-color: royalblue;
+                color: white;
+                border-radius: 1rem;
+                padding: 1rem;
             }
 
             .container-experience {
@@ -193,6 +204,48 @@
                 font-size: 1.5rem;
                 letter-spacing: -0.025rem;
             }
+
+            @media (max-width: 640px) {
+                .container-project {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 20% 65% 15%;
+                    grid-template-areas: 
+                        "area-header"
+                        "area-card"
+                        "area-link";
+                    gap: 1rem;
+                    padding: 1rem;
+                }
+
+                .header-title {
+                    display: inline-block;
+                    grid-area: area-header;
+                    align-items: center;
+                    text-align: center;
+                }
+
+                .card-wrapper {
+                    grid-area: area-card;
+                    display: grid;
+                    grid-template-areas: "card-atas" "card-bawah";
+                    grid-template-columns: 1fr;
+                    gap: 1rem;
+                    column-gap: 1rem;
+                }
+                .card1 {
+                    grid-area: card-atas;
+                }
+                .card2 {
+                    grid-area: card-bawah;
+                }
+
+                .other-link {
+                    margin-top: 0;
+                    margin-bottom: 1rem;
+                    grid-area: area-link;
+                    justify-self: center;
+                }
+            }
         </style>
 
         <script>
@@ -217,7 +270,7 @@
                     <img src="images/kotaLama.jpg" alt="a semarang's beauty" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="avatar">
-                    <img src="images/adamkecil.jpeg" alt="adam" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="images/catStudying1.jpg" alt="adam" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
             </div>
         </div>
@@ -238,24 +291,29 @@
             <div class="container-project">
                 
                 <div class="header-title">
-                    <div class="judul-header">
-                        projects
-                    </div>
-                    <div class="highlight-header">
-                        <h1>Highlighted ⁕</h1>
-                    </div>
+                    <div class="header-kiri">
+                        <div class="judul-header">
+                            Projects
+                        </div>
+                        <div class="highlight-header">
+                            Highlighted ⁕
+                        </div>
+                    
+                    </div> 
+                </div>
+               
+
+                <div class="card-wrapper">
+                    <div class="card1"> Halo </div>
+                    <div class="card2"> Halo </div>
                 </div>
 
                 <div class="other-link">
                     <a href="project_lengkap.html" class="other-link">
                             other projects &rarr;
-                       </a>
-                </div>                
-
-                <div class="main-project">
-                    <div class="card"> Halo </div>
-                    <div class="card"> Halo </div>
+                    </a>
                 </div>
+
             </div>
         </section>
 
