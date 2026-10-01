@@ -1,0 +1,427 @@
+/* style.css */
+:root {
+    --background-color: #f2eae0;
+    --card-color: #f6c7b3;
+    --text-color: #82b3c0;
+    --hover-color: #c3dedd;
+    --utama-color: #f0e2c3;
+    --kedua-hover: #dcece9;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box; 
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #ffffff;
+    flex-direction: column;
+    display: flex; 
+    align-items: center;
+    font-family: 'Geist', sans-serif;
+    min-height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1 {
+    font-size: 2rem;
+    color: #111111;
+    letter-spacing: -0.1rem;
+    font-weight: 400;
+    margin: 0 0 0.5rem 0;
+    line-height: 1;
+}
+
+h2 {
+    color: #111111;
+    margin: 4rem 0 0.5rem 0;
+    letter-spacing: -0.02rem;
+}
+
+h3 {
+    font-weight:1220;
+    font-size: 1.5rem;
+    letter-spacing: -0.025rem;
+}
+
+p {
+    margin: 0rem 0 1rem 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.02rem;
+    font-weight: 350;
+    line-height: 1.4;
+    color: #000000;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Sections */
+.container-foto {
+    max-width: 770px;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2.5rem 30px 20px;
+}
+
+.wrapper-foto {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    height: 150px;
+}
+
+.avatar {
+    position: absolute;
+    bottom: -50px;
+    right: 20px;
+    height: 6.5rem;
+    width: 6.5rem;
+    border-radius: 2.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(17, 17, 17, 0.15);
+    z-index: 5;
+}
+
+.fotonya {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0.8rem ;
+}
+
+.biography {
+    max-width: 770px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0rem 30px 45px;
+    justify-content: center;
+}
+
+.seputar-saya {
+    max-width: 85%;
+}
+
+.projects {
+    height: auto;
+    padding-bottom: 2rem;
+    width: calc(100% - 3rem);
+    max-width: 900px;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 10px rgba(17, 17, 17, 0.15);
+    background-color: #f5f5f5;
+    margin: 0 auto;
+}
+
+.container-project {
+    justify-self: center;
+    display: grid;
+    margin: 0rem auto;
+    gap: 20px;
+    grid-template-areas: "area-header" "area-card";
+    grid-template-rows: auto 1fr;
+    padding: 1.5rem;
+    height: 100%;
+    width: 100%;
+    max-width: 770px;
+}
+
+.header-title {
+    grid-area: area-header;
+}
+
+.header-title .judul-header {
+    display: inline-block;
+    color: white;
+    padding: 0.2rem 0.6rem;
+    background-color: #000;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.highlight-header {
+    font-size: 3rem;
+    color: #111111;
+    letter-spacing: -0.12rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    line-height: 1;
+}
+
+.other-link {
+    grid-area: area-header;
+    color: #000;
+    justify-self: flex-end;
+    margin-top: 5rem;
+    margin-right: 0.25rem;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.other-link:hover {
+    opacity: 0.7;
+}
+
+.card-wrapper {
+    grid-area: area-card;
+    display: grid;
+    grid-template-columns:1fr 1fr ;
+    gap: 1rem;
+    column-gap: 1rem;
+}
+
+.card1, .card2 {
+    border-radius: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #ffffff;
+    color: #111111;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-img {
+    width: 100%;
+    height: 140px;
+    background-color: rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #888888;
+}
+
+.card-content {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card1:hover, .card2:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0 0 0.25rem 0;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.card-divider {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 0;
+    width: 100%;
+}
+
+.card-desc {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #666666;
+    margin: 0;
+}
+
+.container-experience {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    padding: 3rem 2rem 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 770px;
+}
+
+.list-experience {
+    width: 100%;
+    min-height: 100%;
+    height: 100%;
+}
+
+.judul-experience {
+    justify-items: center;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.events-experience {
+    border-left: 2px dashed #ccc;
+    padding-left: 1.5rem;
+    margin-left: 1rem;
+}
+
+.event-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.event-item::before {
+    content: '';
+    position: absolute;
+    left: -1.95rem;
+    top: 0.3rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: #111;
+    border-radius: 50%;
+}
+
+.event-title {
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.event-role {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 0.2rem 0;
+}
+
+.event-date {
+    font-size: 0.75rem;
+    color: #888;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    bottom: 1.5rem;
+    z-index: 10;
+    box-shadow: 0rem 0rem 0.5rem 0.1rem rgba(0, 0, 0, 0.1);
+    background-color: white;
+    width: auto;
+    padding: 0 1.5rem;
+    height: 3rem;
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+}
+            
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    color: black;
+    align-items: center;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.nav-link:hover {
+    opacity: 0.6;
+}
+
+.nav-logo {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+/* Media Queries */
+@media (max-width: 640px) {
+    .projects {
+        background-color: #f5f5f5;
+        width: calc(100% - 2rem);
+        margin: 0 auto;
+        box-shadow: none;
+        border-radius: 1rem;
+        height: auto;
+    }
+
+    .container-project {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            "area-header"
+            "area-card"
+            "area-link";
+        gap: 1rem;
+        padding: 1rem;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .header-title {
+        display: inline-block;
+        grid-area: area-header;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-title .highlight-header {
+        font-size: 2rem;
+    }
+
+    .card-wrapper {
+        grid-area: area-card;
+        display: grid;
+        grid-template-areas: "card-atas" "card-bawah";
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        column-gap: 1rem;
+        margin: 0;
+    }
+    
+    .card1 {
+        grid-area: card-atas;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card2 {
+        grid-area: card-bawah;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .other-link {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        grid-area: area-link;
+        justify-self: center;
+    }
+    
+    .wrapper-foto {
+        height: 120px;
+    }
+    
+    .avatar {
+        width: 5rem;
+        height: 5rem;
+        bottom: -30px;
+    }
+}

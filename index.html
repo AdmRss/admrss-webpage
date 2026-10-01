@@ -1,378 +1,130 @@
 <!DOCTYPE html>
-<html lang="en" theme="light">  
+<html lang="en" data-theme="light">  
     <head>
         <meta charSet="UTF-8">
-        <link href="./src/input.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AdmRss Page</title>
+        
+        <!-- SEO Meta Tags -->
+        <title>Adam — Personal Page</title>
+        <meta name="description" content="Adam — Informatics student at Undip from Lombok, Indonesia. Aspiring Fullstack Engineer.">
+        <meta name="author" content="Adam">
+        <meta name="robots" content="index, follow">
+        <meta property="og:title" content="Adam — Personal Page">
+        <meta property="og:description" content="Informatics student at Undip, aspiring Fullstack Engineer.">
+        <meta property="og:type" content="website">
+
+        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-        <style>
-            :root {
-                --background-color: #f2eae0;
-                --card-color: #f6c7b3;
-                --text-color: #82b3c0;
-                --hover-color: #c3dedd;
-                --utama-color: #f0e2c3;
-                --kedua-hover: #dcece9;
-            }
-            
-
-            *, *::before, *::after {
-                box-sizing: border-box; 
-            }
-
-            body {
-                background-color: #ffffff;
-                flex-direction: column;
-                display: flex; 
-                align-items: center;
-                font-family: 'Geist', sans-serif;
-                min-height: auto;
-                width: 100%;
-                margin: 0;
-                padding: 0;
-            }
-
-            .container-foto {
-                max-width: 770px;
-                height: 230px;
-                width: 100%;
-                margin: 0 auto;
-                padding: 2.5rem 30px 20px;
-            }
-
-            .wrapper-foto {
-                position: relative;
-                max-width: 100%;
-                height: 150px;
-                width: 720px;
-            }
-
-            .avatar {
-                position: absolute;
-                bottom: -50px;
-                right: 20px;
-                height: 6.5rem;
-                width: 6.5rem;
-                border-radius: 2.5rem;
-                overflow: hidden;
-                box-shadow: 0 4px 10px rgba(17, 17, 17, 0.15);
-                z-index: 5;
-            }
-
-            .fotonya {
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-                border-radius: 0.8rem ;
-            }
-
-            .biography {
-                max-width: 770px;
-                width: 100%;
-                margin: 0 auto;
-                padding: 0rem 30px 45px;
-                justify-content: center;
-            }
-
-            .seputar-saya {
-                max-width: 85%;
-            }
-
-            h1 {
-                font-size: 2rem;
-                color: #111111;
-                letter-spacing: -0.1rem;
-                font-weight: 400;
-                margin: 0 0 0.5rem 0;
-                line-height: 1;
-            }
-
-            h2 {
-                color: #111111;
-                margin: 4rem 0 0.5rem 0;
-                letter-spacing: -0.02rem;
-            }
-
-            p {
-                margin: 0rem 0 1rem 0;
-                font-size: 0.9rem;
-                letter-spacing: 0.02rem;
-                font-weight: 350;
-                line-height: 1.4;
-                color: #000000;
-            }
-
-            .projects {
-                height: 35.5rem;
-                width: 100%;
-                border-radius: 1.5rem;
-                box-shadow: 0 4px 10px rgba(17, 17, 17, 0.15);
-                background-color: #f5f5f5;
-                margin-right: 1.5rem;
-                margin-left: 1.5rem;
-            }
-
-            .container-project {
-                justify-self: center;
-                display: grid;
-                margin: 0rem auto;
-                gap: 20px;
-                grid-template-areas: "area-header" "area-card";
-                grid-template-rows: 1fr 4fr;
-                padding: 1.5rem;
-                height: 100%;
-                width: 100%;
-                max-width: 770px;
-            }
-
-            .header-title {
-                grid-area: area-header;
-            }
-
-            .header-title .judul-header {
-                display: inline-block;
-                color: white;
-                padding: 0.2rem 0.6rem;
-                background-color: #000;
-                border-radius: 0.5rem;
-                margin-bottom: 0.5rem;
-                margin-top: 1rem;
-            }
-
-            .highlight-header {
-                font-size: 3rem;
-                color: #111111;
-                letter-spacing: -0.12rem;
-                font-weight: 600;
-                margin: 0 0 0.5rem 0;
-                line-height: 1;
-            }
-
-            .other-link {
-                grid-area: area-header;
-                color: #000;
-                justify-self: flex-end;
-                margin-top: 5rem;
-                margin-right: 0.25rem;
-                text-decoration: none;
-            }
-
-            .card-wrapper {
-                grid-area: area-card;
-                display: grid;
-                grid-template-columns:1fr 1fr ;
-                gap: 1rem;
-                column-gap: 1rem;
-
-            }
-            .card-wrapper .card1 {
-                padding: 1rem;
-                background-color: #dcece9;
-                border-radius: 1rem;
-            }
-
-            .card-wrapper .card2 {
-                background-color: royalblue;
-                color: white;
-                border-radius: 1rem;
-                padding: 1rem;
-            }
-
-            .container-experience {
-                width: 100%;
-                height: 100%;
-                min-height: 900px;
-                padding: 3rem 2rem 3rem 2rem;
-                display: flex;
-                flex-direction: column;
-                margin: 0 auto;
-                max-width: 770px;
-            }
-            .list-experience {
-                width: 100%;
-                min-height: 100%;
-                height: 100%;
-            }
-
-            .judul-experience {
-                justify-items: center;
-                height: 30px;
-            }
-
-            h3 {
-                font-weight:1220;
-                font-size: 1.5rem;
-                letter-spacing: -0.025rem;
-            }
-
-            .navbar {
-                position: fixed;
-                bottom: 1.5rem;
-                z-index: 10;
-                box-shadow: 0rem 0rem 0.150rem 0.075rem rgba(0, 0, 0, 0.1);
-                background-color: white;
-                width: 7rem;
-                height: 2.5rem;
-                border-radius: 5rem;
-            }
-            
-            .nav-wrapper {
-                display: flex;
-                justify-content: space-evenly;
-                color: black;
-                justify-items: center;
-            }
-
-            @media (max-width: 640px) {
-                .projects {
-                    background-color: #f5f5f5;
-                    width: calc(100% - 2rem);
-                    margin: 0 auto;
-                    box-shadow: none;
-                    border-radius: 1rem;
-                    height: 55rem;
-                }
-
-                .container-project {
-                    grid-template-columns: 1fr;
-                    grid-template-rows: 13% 70% 15%;
-                    grid-template-areas: 
-                        "area-header"
-                        "area-card"
-                        "area-link";
-                    gap: 1rem;
-                    padding: 1rem;
-                    margin-left: 2rem;
-                    margin-right: 2rem;
-                }
-
-                .header-title {
-                    display: inline-block;
-                    grid-area: area-header;
-                    align-items: center;
-                    text-align: center;
-                }
-
-                .header-title .highlight-header {
-                    font-size: 2rem;
-                }
-
-                .card-wrapper {
-                    grid-area: area-card;
-                    display: grid;
-                    grid-template-areas: "card-atas" "card-bawah";
-                    grid-template-columns: 1fr;
-                    gap: 1rem;
-                    column-gap: 1rem;
-                    margin: -1rem 0.5rem;
-                }
-                .card1 {
-                    grid-area: card-atas;
-                    padding: 1rem;
-                    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-                }
-                .card2 {
-                    grid-area: card-bawah;
-                    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-                }
-
-                .other-link {
-                    margin-top: 10%;
-                    margin-bottom: 1rem;
-                    grid-area: area-link;
-                    justify-self: center;
-                }
-            }
-        </style>
-
-        <script>
-            images.forEach
-        </script>
+        
+        <!-- Styles -->
+        <link href="./style.css" rel="stylesheet">
     </head>
-    <!-- <div align='center'> <img src="images/Capture.JPG" alt="logo header"><br/>
-   </div> --> 
     <body>
 
-        <div class="navbar">
+        <nav class="navbar">
             <div class="nav-wrapper">
-                <img src="">
-                <div class="nav2">Halo</div>
-                <div class="nav3">Halo</div>
+                <a href="#hero" class="nav-link">
+                    <img src="images/LogoRumah.jpg" class="nav-logo" alt="Home Logo">
+                </a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
             </div>
-        </div>
+        </nav>
 
-        <div class="container-foto">
+        <header class="container-foto" id="hero">
             <div class="wrapper-foto">
                 <div class="fotonya">
-                    <img src="images/kotaLama.jpg" alt="a semarang's beauty" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="images/kotaLama.jpg" alt="A Semarang's beauty - Kota Lama" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="avatar">
-                    <img src="images/catStudying1.jpg" alt="adam" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="images/catStudying1.jpg" alt="Adam Profile Picture" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
             </div>
-        </div>
-        <section class="biography">
-            <div class="seputar-saya">
-                <h1><span><strong>Hi, I'm Adam 👋</strong></span></h1>
-                <p>Informatics undip, came from lombok, Indonesia.<br>who aspires to be a Fullstack Engineer.</span></p>
-                <h2>
-                    What's ongoing 🪄
-                </h2>
-                <p>
-                    undergraduate, while continously self developing with endless-ideas in mind.
-                </p>
-            </div>
-        </section>
+        </header>
 
-        <section class="projects">
-            <div class="container-project">
-                
-                <div class="header-title">
-                    <div class="header-kiri">
-                        <div class="judul-header">
-                            Projects
-                        </div>
-                        <div class="highlight-header">
-                            Highlighted ⁕
-                        </div>
+        <main>
+            <section class="biography" id="about">
+                <div class="seputar-saya">
+                    <h1><span><strong>Hi, I'm Adam 👋</strong></span></h1>
+                    <p>Informatics Undip, came from Lombok, Indonesia.<br>Who aspires to be a Fullstack Engineer.</p>
+                    <h2>What's ongoing 🪄</h2>
+                    <p>Undergraduate, while continuously self-developing with endless ideas in mind.</p>
+                </div>
+            </section>
+
+            <section class="projects" id="projects">
+                <div class="container-project">
                     
-                    </div> 
-                </div>
-               
-
-                <div class="card-wrapper">
-                    <div class="card1"> Halo </div>
-                    <div class="card2"> Halo </div>
-                </div>
-
-                <div class="other-link">
-                    <a href="project_lengkap.html" class="other-link">
-                            other projects &rarr;
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-
-
-
-        <main class="container-experience">
-            <div class="list-experience">
-                <div class="judul-experience">
-                    <h3>Work Experience</h3>
-                </div>
-
-                <div class="events-experience">
-                    <div class="event-pertama">
-                        TO BE CONTINUED
+                    <div class="header-title">
+                        <div class="header-kiri">
+                            <h2 class="judul-header">Projects</h2>
+                            <div class="highlight-header">
+                                Highlighted ⁕
+                            </div>
+                        </div> 
                     </div>
+
+                    <div class="card-wrapper">
+                        <div class="card1">
+                            <div class="card-img">
+                                <span class="placeholder-text">Image coming soon</span>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">My First Portfolio</h3>
+                                <div class="card-meta">
+                                    <span class="card-role">Frontend</span>
+                                    <span class="card-year">2026</span>
+                                </div>
+                                <hr class="card-divider">
+                                <p class="card-desc">Personal landing page developed using native HTML & CSS with mobile responsiveness.</p>
+                            </div>
+                        </div>
+                        <div class="card2">
+                            <div class="card-img">
+                                <span class="placeholder-text">Image coming soon</span>
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Study Habit Tracker</h3>
+                                <div class="card-meta">
+                                    <span class="card-role">Fullstack</span>
+                                    <span class="card-year">2026</span>
+                                </div>
+                                <hr class="card-divider">
+                                <p class="card-desc">An app to track learning progress for university students.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="project_lengkap.html" class="other-link">
+                        other projects &rarr;
+                    </a>
+
                 </div>
-                <hr>
-            </div>
-        </main> 
+            </section>
+
+            <section class="container-experience" id="experience">
+                <div class="list-experience">
+                    <div class="judul-experience">
+                        <h3>Work Experience</h3>
+                    </div>
+
+                    <div class="events-experience">
+                        <div class="event-item">
+                            <h4 class="event-title">Frontend Developer (Learning)</h4>
+                            <p class="event-role">Self-Taught</p>
+                            <p class="event-date">2023 - Present</p>
+                        </div>
+                        <div class="event-item">
+                            <h4 class="event-title">Informatics Undergraduate</h4>
+                            <p class="event-role">Universitas Diponegoro</p>
+                            <p class="event-date">2024 - Present</p>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </section> 
+        </main>
     </body>
 </html>
